@@ -1,17 +1,24 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+// Rutas
+import { APP_ROUTES } from './app.routes';
+
+// Modulos
+import { PagesModule } from './pages/pages.module';
+
+// temporal
+import { FormsModule } from '@angular/forms';
+
+//servicios
+import { ServiceModule  } from './services/service.module';
+
+// Componentes
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
-import { SharedService } from './services/shared.service';
-import { SidebarService } from './services/sidebar.service';
-
-// rutas
-import { APP_ROUTES } from './app.routes';
 import { RegisterComponent } from './login/register.component';
 
-//Modulos
-import { PagesModule } from './pages/pages.module';
+
 
 @NgModule({
   declarations: [
@@ -22,9 +29,11 @@ import { PagesModule } from './pages/pages.module';
   imports: [
     BrowserModule,
     APP_ROUTES,
-    PagesModule
+    PagesModule,
+    FormsModule,
+    ServiceModule
   ],
-  providers: [SharedService, SidebarService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
